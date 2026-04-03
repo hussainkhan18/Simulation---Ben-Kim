@@ -8,7 +8,7 @@ function App() {
   const [log, setLog] = useState([]);
 
   const startSimulation = async () => {
-    const res = await fetch("http://127.0.0.1:3001/api/start", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/start`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -26,7 +26,7 @@ function App() {
   };
 
   const takeAction = async (actionId) => {
-    const res = await fetch("http://127.0.0.1:3001/api/turn", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/turn`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,7 +50,7 @@ function App() {
     ]);
 
     if (data.isComplete) {
-      const endRes = await fetch("http://127.0.0.1:3001/api/end", {
+      const endRes = await fetch(`${process.env.REACT_APP_API_URL}/api/end`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
