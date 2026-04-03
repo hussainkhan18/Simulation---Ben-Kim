@@ -500,6 +500,6 @@ app.get('/api/health', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(3001, () => {
-  console.log(`🚀 Crisis Simulation Engine running on port ${3001}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Crisis Simulation Engine running on port ${PORT}`);
 });
